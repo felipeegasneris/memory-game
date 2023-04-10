@@ -1,16 +1,23 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.scss';
-
-import NxWelcome from './nx-welcome';
-
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Home from './views/Home/Home';
+import Game from './views/Game/Game';
+import Finish from './views/Finish/Finish';
+export const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home />,
+  },
+  {
+    path: '/game',
+    element: <Game />,
+  },
+  {
+    path: '/finish',
+    element: <Finish />,
+  },
+]);
 export function App() {
-  return (
-    <>
-      <NxWelcome title="memory-game" />
-
-      <div />
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
